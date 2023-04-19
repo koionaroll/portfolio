@@ -41,14 +41,14 @@ flex-direction:column;
 align-items:center;
 justify-content:center;
 h1{
-    font-size: 8vw;
+    font-size: 4rem;
     font-weight:800;
 }
 li{
     display:flex;
     justify-content:flex-start;
     list-style-type:none;
-    font-size:3vw;
+    font-size:1.5rem;
 }
 align-items:flex-start;
 margin: 0 auto;
