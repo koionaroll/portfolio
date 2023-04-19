@@ -1,12 +1,12 @@
 export const style = {
     backgroundOne: "#4E0447",
     backgroundTwo:"#304B38",
-    backgroundThree:"#b8b8b8",
+    backgroundThree:"#cfcfcf",
     primaryOne:"#f5f5f5",
     primaryTwo:"#D4499A",
-    primaryThree:"#1f1f1",
+    primaryThree:"#2b2b2b",
     tabletWidth: "768px",
     desktopWidth: "1280px",
+    gradient: "linear-gradient(45deg, #2f864b 0%, #1e77aa 49%, #9c2390 100%)"
 }
-
  
