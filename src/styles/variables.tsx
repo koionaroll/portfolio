@@ -1,5 +1,5 @@
 export const style = {
-    backgroundOne: "#4E0447",
+    backgroundOne: "#5a0b52",
     backgroundTwo:"#304B38",
     backgroundThree:"#cfcfcf",
     primaryOne:"#f5f5f5",

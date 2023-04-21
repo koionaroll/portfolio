@@ -1,0 +1,29 @@
+[
+  {
+    "name": "Magic Sim",
+    "subTitle": "Card Archive and Search",
+    "date": "APR. 2023",
+    "img": "./assets/images/capstone.png",
+    "link": "https://github.com/koionaroll/capstone-API",
+    "techStack": ["ReactJs, ", "ExpressJs, ", "ScryFallAPI"],
+    "description": "For my capstone project when I attended the BrainStation bootcamp, I decided to build an archival website to keep track of a user's decks from the trading card game, Magic the Gathering. Magic Sim is a full stack react app where the user can search for card information that gets fetched from the ScryFallAPI and add them to their decklists. Users can also save and edit their created decks."
+  },
+  {
+    "name": "InStock",
+    "subTitle": "Warehouse Inventory",
+    "date": "MAR. 2023",
+    "img": "./assets/images/instock.png",
+    "link": "https://github.com/koionaroll/InStock-Frontend",
+    "techStack": ["ReactJs, ", "ExpressJs, ", "MySql"],
+    "description": "InStock is a full stack react website that tracks the inventory of items across various different warehouses. I collaborated on this project with classmates from the BrainStation bootcamp utilizing Git Version Control in order to contributes to a single codebase. The backend Express server handles fetches to the MySql databases using Knex. The frontend handles user validation when creating/ editing inventory/ warehouse information."
+  },
+  {
+    "name": "Brainflix",
+    "subTitle": "Video Streaming",
+    "date": "MAR. 2023",
+    "img": "./assets/images/brainflix.png",
+    "link": "https://github.com/koionaroll/brainflix",
+    "techStack": ["ReactJs, ", "ExpressJs"],
+    "description": "BrainFlix is a video streaming website similar in design and functionality to Vimeo. The tech stack of this project includes ReactJs for the frontend and ExpressJs for the backend API. The user can select and view videos from a suggestion bar as well as upload videos"
+  }
+]

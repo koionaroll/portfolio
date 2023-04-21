@@ -1,4 +1,4 @@
-import React, { FormEvent, HtmlHTMLAttributes, RefObject, useRef, useState } from "react";
+import React, { FormEvent, HTMLInputTypeAttribute, RefObject, useRef, useState } from "react";
 import styled from "styled-components";
 import * as stylevar from "../styles/variables";
 import emailjs from "@emailjs/browser";
@@ -34,7 +34,7 @@ const Email = styled.form`
 
   h1 {
     padding: 3rem 0 1rem;
-    font-size: 2.9rem;
+    font-size: 2.6rem;
     font-weight: 600;
     @media (min-width: ${stylevar.style.tabletWidth}) {
       padding-top: 6rem;
@@ -91,7 +91,7 @@ const Socials = styled.div`
 `;
 
 function Contact() {
-  const ref = useRef()
+  const ref =  useRef();
   const [success, setSuccess] = useState(false);
   const [empty, setEmpty] = useState(false);
   const [reload, setReload] = useState(0);

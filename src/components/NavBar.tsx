@@ -1,12 +1,6 @@
 import React from "react";
-import { useRef } from "react";
 import styled from "styled-components";
 import * as stylevar from "../styles/variables";
-
-/* @media (min-width: ${stylevar.style.tabletWidth}) {
-}
-@media (min-width: ${stylevar.style.desktopWidth}) {
-} */
 
 const Section = styled.div`
   position: fixed;
@@ -24,13 +18,17 @@ const Section = styled.div`
   @media (min-width: ${stylevar.style.tabletWidth}) {
     padding: 0 4rem;
   }
-  @media (min-width: ${stylevar.style.desktopWidth}) {
-  }
   overflow-y: auto;
-`;
+  div{
+    cursor: pointer;
+    &:hover{
+      
+    }
+  }
+  `;
 
 function NavBar() {
-
+  
   const doClick = (to:string) => {
     const element = document.getElementById(to);
     if (element) {

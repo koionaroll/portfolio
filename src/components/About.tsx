@@ -1,11 +1,8 @@
-import React from "react";
+import { React, useEffect, useState, useRef } from "react";
+import { Canvas } from "@react-three/fiber";
+import { OrbitControls } from "@react-three/drei";
 import styled from "styled-components";
 import * as stylevar from "../styles/variables";
-
-/* @media (min-width: ${stylevar.style.tabletWidth}) {
-}
-@media (min-width: ${stylevar.style.desktopWidth}) {
-} */
 
 const Section = styled.div`
   height: 100vh;
@@ -36,48 +33,70 @@ const Section = styled.div`
 `;
 
 const Bio = styled.div`
-display: flex;
-flex-direction:column;
-align-items:center;
-justify-content:center;
-h1{
-    font-size: 4rem;
-    font-weight:800;
-}
-li{
-    display:flex;
-    justify-content:flex-start;
-    list-style-type:none;
-    font-size:1.5rem;
-}
-align-items:flex-start;
-margin: 0 auto;
-@media (min-width: ${stylevar.style.tabletWidth}) {
-    h1{
-        font-size: 5.9vw;
-        font-weight:800;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  align-items: flex-start;
+  margin: 0 auto;
+  h1 {
+    font-size: 3rem;
+    font-weight: 800;
+  }
+  li {
+    display: flex;
+    justify-content: flex-start;
+    list-style-type: none;
+    font-size: 1.3rem;
+  }
+  @media (min-width: ${stylevar.style.tabletWidth}) {
+    h1 {
+      font-size: 5.9vw;
+      font-weight: 800;
     }
-    li{
-        list-style-type:none;
-        font-size:2.5vw;
+    li {
+      list-style-type: none;
+      font-size: 2.5vw;
     }
-}
+  }
 `;
 
 const Cube = styled.div``;
 
+var cubeMaterials
+
 function About() {
+  const [size, setSize] = useState([0.0, 0.0, 0.0]);
+  const windowSize = useRef([window.innerWidth]);
+  useEffect(() => {
+    if (windowSize.current[0] < 768) {
+      setSize([2.5, 2.5, 2.5]);
+    } else if (windowSize.current[0] >= 768 && windowSize.current[0] < 1280) {
+      setSize([2, 2, 2]);
+    } else if (windowSize.current[0] >= 1280) {
+      setSize([2.5, 2.5, 2.5]);
+    }
+  }, []);
+
   return (
     <Section id="section-1">
       <Bio>
         <h1>KHÔI TRAN</h1>
         <ul>
-            <li>Full Stack Developer</li>
-            <li>Tech Enthusiast</li>
-            <li>Gamer</li>
+          <li>Full Stack Developer</li>
+          <li>Tech Enthusiast</li>
+          <li>Gamer</li>
         </ul>
       </Bio>
-      <Cube>cube</Cube>
+      <Cube>
+        <Canvas>
+          <OrbitControls enableZoom={false} autoRotate enablePan={false} />
+          <mesh>
+            <meshStandardMaterial map="" normalMap="" />
+            <boxGeometry args={size} />
+          </mesh>
+        </Canvas>
+      </Cube>
     </Section>
   );
 }
