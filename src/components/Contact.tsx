@@ -1,7 +1,11 @@
-import React, { FormEvent, HTMLInputTypeAttribute, RefObject, useRef, useState } from "react";
+import React, { FormEvent, useRef, useState } from "react";
 import styled from "styled-components";
 import * as stylevar from "../styles/variables";
 import emailjs from "@emailjs/browser";
+import { ReactComponent as Facebook } from "../../public/assets/icons/faceboook.svg";
+import { ReactComponent as Linkedin } from "../../public/assets/icons/linkedin.svg";
+import { ReactComponent as Gh } from "../../public/assets/icons/gh.svg";
+import { ReactComponent as Whatsapp } from "../../public/assets/icons/whatsapp.svg";
 
 const Section = styled.div`
   height: 100vh;
@@ -67,13 +71,13 @@ const Email = styled.form`
     font-weight: 600;
     background-color: ${stylevar.style.primaryTwo};
     color: ${stylevar.style.primaryOne};
-    transition-duration:300ms;
-    &:hover{
-        transition-duration:250ms;
-        transition-delay:50ms;
-        animation-timing-function:ease-in;
-        background-color: ${stylevar.style.backgroundOne};
-        cursor: pointer;
+    transition-duration: 300ms;
+    &:hover {
+      transition-duration: 250ms;
+      transition-delay: 50ms;
+      animation-timing-function: ease-in;
+      background-color: ${stylevar.style.backgroundOne};
+      cursor: pointer;
     }
   }
   section {
@@ -84,25 +88,69 @@ const Email = styled.form`
 
 const Socials = styled.div`
   display: flex;
-  align-items:flex-end;
+  align-items: flex-end;
   @media (min-width: ${stylevar.style.tabletWidth}) {
-    align-items:flex-start;
+    align-items: center;
+  }
+  @media (min-width: ${stylevar.style.desktopWidth}) {
+    align-items: start;
+    margin-top: 15rem;
+  }
+  div {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin-bottom: 2rem;
+    @media (min-width: ${stylevar.style.tabletWidth}) {
+      display: grid;
+      grid-template-areas:
+        "1 2"
+        "3 4";
+      width: 100%;
+      grid-gap: 3.5rem;
+      height: fit-content;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+  svg {
+    width: 3.5rem;
+    fill: ${stylevar.style.primaryOne};
+    cursor: pointer;
+    @media (min-width: ${stylevar.style.tabletWidth}) {
+      width: 5rem;
+    }
+
+    @media (min-width: ${stylevar.style.desktopWidth}) {
+      width:7rem;
+    }
+    transition-duration: 100ms;
+    &:hover {
+      transition-duration: 100ms;
+      transition-delay: 50ms;
+      animation-timing-function: ease-in;
+      fill: ${stylevar.style.primaryTwo};
+    }
   }
 `;
 
 function Contact() {
-  const ref =  useRef();
+  const ref = useRef();
   const [success, setSuccess] = useState(false);
   const [empty, setEmpty] = useState(false);
   const [reload, setReload] = useState(0);
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
-    if (ref.current.name.value === "" || ref.current.email.value === "" || ref.current.message.value === ""){
-        setEmpty(true)
-        return;
-    }else{
-        setEmpty(false)
+    if (
+      ref.current.name.value === "" ||
+      ref.current.email.value === "" ||
+      ref.current.message.value === ""
+    ) {
+      setEmpty(true);
+      return;
+    } else {
+      setEmpty(false);
     }
     emailjs
       .sendForm(
@@ -133,7 +181,6 @@ function Contact() {
         }
       );
   };
-
   return (
     <Section id="section-3">
       <Email ref={ref} onSubmit={handleSubmit}>
@@ -148,9 +195,7 @@ function Contact() {
           {success
             ? "Your message has been sent. I will get back you you soon :) "
             : null}
-          {empty
-            ? "Please fill out all empty forms."
-            : null}
+          {empty ? "Please fill out all empty forms." : null}
           <div>
             {reload === 1 ? "Reloading in 3 ... " : null}
             {reload === 2 ? "Reloading in 2 ... " : null}
@@ -158,7 +203,22 @@ function Contact() {
           </div>
         </section>
       </Email>
-      <Socials>SOCIALS</Socials>
+      <Socials>
+        <div>
+          <a href="https://www.linkedin.com/in/tranvankhoi/">
+            <Linkedin />
+          </a>
+          <a href="https://github.com/koionaroll">
+            <Gh />
+          </a>
+          <a href="https://www.facebook.com/Koionaroll">
+            <Facebook />
+          </a>
+          <a href="tel:778-929-2543">
+            <Whatsapp />
+          </a>
+        </div>
+      </Socials>
     </Section>
   );
 }
