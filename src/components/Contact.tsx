@@ -194,7 +194,7 @@ function Contact() {
         </button>
         <section>
           {success
-            ? "Your message has been sent. I will get back you you soon :) "
+            ? "Your message has been sent. I will get back to you soon :) "
             : null}
           {empty ? "Please fill out all empty forms." : null}
           <div>
