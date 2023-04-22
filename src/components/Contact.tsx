@@ -38,7 +38,7 @@ const Email = styled.form`
   gap: 1.5rem;
 
   h1 {
-    padding: 3rem 0 1rem;
+    padding: 1rem 0 0rem;
     font-size: 2.6rem;
     font-weight: 600;
     @media (min-width: ${stylevar.style.tabletWidth}) {
