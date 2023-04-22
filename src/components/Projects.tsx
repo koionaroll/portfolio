@@ -43,7 +43,7 @@ const Scroll = styled.div`
     padding: 1rem 4rem;
   }
   @media (min-width: ${stylevar.style.desktopWidth}) {
-    overflow-y: hidden;
+    overflow-y: scroll;
     overflow-x: scroll;
     flex-direction: row;
     gap:3rem;

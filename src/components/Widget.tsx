@@ -1,4 +1,4 @@
-import  React, {  useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import * as stylevar from "../styles/variables";
 
@@ -63,7 +63,7 @@ const Project = styled.section`
 `;
 interface Desc {
   readonly isClicked: boolean;
-};
+}
 const Desc = styled.div<Desc>`
   padding: 0 0.5rem 0.5rem;
   display: ${({ isClicked }) => (isClicked ? "inline" : "none")};
@@ -76,7 +76,7 @@ const Desc = styled.div<Desc>`
 const Btn = styled.button`
   border: none;
   border-radius: 0.25rem;
-  margin-right:1rem;
+  margin-right: 1rem;
   padding: 0.25rem 1rem;
   font-size: 0.75rem;
   font-weight: 500;
@@ -97,23 +97,15 @@ const Layout = styled.div`
     display: flex;
     flex-direction: column;
     gap: 1rem;
+    /* overflow:auto; */
   }
 `;
 
-function Widget({ e }:any) {
+function Widget({ e }: any) {
   const [isClicked, setIsClicked] = useState(false);
   const handleClick = () => {
-
-      setIsClicked(!isClicked);
-
+    setIsClicked(!isClicked);
   };
-  // const handleClick = () => {
-  //   if (window.innerWidth >= 1280) {
-  //     return;
-  //   } else {
-  //     setIsClicked(!isClicked);
-  //   }
-  // };
   return (
     <>
       <Layout>

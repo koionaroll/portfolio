@@ -115,7 +115,6 @@ function About() {
           <li>Full Stack Developer</li>
           <li>Tech Enthusiast</li>
           <li>Solves Rubik's cube under 30 sec</li>
-          <li>Gamer JigaCHAD</li>
         </ul>
       </Bio>
       <Cube>
