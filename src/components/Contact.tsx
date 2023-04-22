@@ -12,7 +12,7 @@ const Section = styled.div`
   height: 100vh;
   background-color: ${stylevar.style.backgroundTwo};
   scroll-snap-align: center;
-  padding: 4rem 1rem 0;
+  padding: 4rem 1rem 4rem;
   @media (min-width: ${stylevar.style.tabletWidth}) {
     padding: 4rem 4rem 0;
   }

@@ -7,13 +7,14 @@ import data from "../data/project.json";
 const Section = styled.div`
   height: 100vh;
   padding-top: 4rem;
+  padding-bottom: 4rem;
   background-color: ${stylevar.style.backgroundOne};
   scroll-snap-align: center;
   display: flex;
   flex-direction: column;
   color: ${stylevar.style.primaryOne};
   h2 {
-    padding: 2rem 1rem;
+    padding: 2rem 1rem 001rem;
     font-size: 1.7rem;
     font-weight: 600;
     @media (min-width: ${stylevar.style.tabletWidth}) {

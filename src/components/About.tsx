@@ -17,7 +17,7 @@ const Section = styled.div`
   background-image: ${stylevar.style.gradient};
   background-size: 500%;
   scroll-snap-align: center;
-  padding: 4rem 1rem 0;
+  padding: 5rem 1rem 4rem;
   animation: bg-animation 10s infinite alternate;
   @keyframes bg-animation {
     0% {
