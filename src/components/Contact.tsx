@@ -145,7 +145,7 @@ function Contact() {
     e.preventDefault();
     if (
       ref.current.name.value === "" ||
-      ref.current.email.value === "" ||
+      // ref.current.email.value === "" ||
       ref.current.message.value === ""
     ) {
       setEmpty(true);
@@ -187,7 +187,7 @@ function Contact() {
       <Email ref={ref} onSubmit={handleSubmit}>
         <h1>Get in Touch!</h1>
         <input type="text" name="name" placeholder="Name" />
-        <input type="email" name="email" placeholder="Email" />
+        {/* <input type="email" name="email" placeholder="Email" /> */}
         <textarea name="message" placeholder="Write me anything!" rows={10} />
         <button type="submit" value="Send">
           Send
