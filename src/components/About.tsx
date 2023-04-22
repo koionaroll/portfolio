@@ -1,4 +1,4 @@
-import { React, useEffect, useState, useRef, Suspense } from "react";
+import React, { useEffect, useState, useRef, Suspense } from "react";
 import { Canvas, useLoader, useFrame } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
 import { TextureLoader } from "three/src/loaders/TextureLoader";
@@ -10,6 +10,7 @@ import face4 from "../../public/assets/icons/4.png";
 import face5 from "../../public/assets/icons/5.png";
 import face6 from "../../public/assets/icons/6.png";
 import * as stylevar from "../styles/variables";
+import { BoxGeometry } from "three";
 
 const Section = styled.div`
   height: 100vh;
@@ -74,8 +75,7 @@ const Cube = styled.div`
 `;
 
 function About() {
-  const [size, setSize] = useState([0.0, 0.0, 0.0]);
-  const [click, setClick] = useState(false);
+  const [size, setSize] = React.useState<any>([0.0, 0.0, 0.0]);
   const windowSize = useRef([window.innerWidth]);
   useEffect(() => {
     if (windowSize.current[0] < 768) {
@@ -88,10 +88,10 @@ function About() {
   }, []);
 
   function Box() {
-    const mesh = useRef();
+    const mesh = useRef<any>(null)
     const [map1, map2, map3, map4, map5, map6] = useLoader(TextureLoader, [face1, face2, face3, face4, face5, face6]);
     useFrame(() => {
-      mesh.current.rotation.x = mesh.current.rotation.y += 0.005;
+      mesh.current!.rotation.x = mesh.current!.rotation.y += 0.005;
     });
 
     return (
@@ -115,6 +115,7 @@ function About() {
           <li>Full Stack Developer</li>
           <li>Tech Enthusiast</li>
           <li>Solves Rubik's cube under 30 sec</li>
+          <li>Gamer JigaCHAD</li>
         </ul>
       </Bio>
       <Cube>

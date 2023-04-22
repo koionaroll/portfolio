@@ -47,6 +47,7 @@ const Scroll = styled.div`
     overflow-x: scroll;
     flex-direction: row;
     gap:3rem;
+    height:45rem;
   }
   ::-webkit-scrollbar {
   width: 22px;

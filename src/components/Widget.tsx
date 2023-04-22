@@ -1,4 +1,4 @@
-import { React, useState, useEffect } from "react";
+import  React, {  useState, useEffect } from "react";
 import styled from "styled-components";
 import * as stylevar from "../styles/variables";
 
@@ -18,9 +18,10 @@ const Project = styled.section`
   }
   @media (min-width: ${stylevar.style.desktopWidth}) {
     min-height: 25rem;
-    min-width: 50rem;
+    min-width: 40rem;
     width: auto;
     flex-direction: column;
+    max-height: 400px;
   }
 
   img {
@@ -60,8 +61,10 @@ const Project = styled.section`
     justify-content: center;
   }
 `;
-
-const Desc = styled.div`
+interface Desc {
+  readonly isClicked: boolean;
+};
+const Desc = styled.div<Desc>`
   padding: 0 0.5rem 0.5rem;
   display: ${({ isClicked }) => (isClicked ? "inline" : "none")};
   margin-bottom: 1.5rem;
@@ -69,15 +72,11 @@ const Desc = styled.div`
     font-size: 1.25rem;
   }
 `;
-const DescDesk = styled.p`
-  padding: 0 0.5rem 0.5rem;
-  display: ${({ isDesk }) => (isDesk ? "inline" : "none")};
-  margin-bottom: 1.5rem;
-`;
 
 const Btn = styled.button`
   border: none;
   border-radius: 0.25rem;
+  margin-right:1rem;
   padding: 0.25rem 1rem;
   font-size: 0.75rem;
   font-weight: 500;
@@ -101,20 +100,24 @@ const Layout = styled.div`
   }
 `;
 
-function Widget({ e }) {
+function Widget({ e }:any) {
   const [isClicked, setIsClicked] = useState(false);
-  const handleClick = (e) => {
-    if (window.innerWidth >= 1280) {
-      return;
-    } else {
+  const handleClick = () => {
+
       setIsClicked(!isClicked);
-    }
+
   };
+  // const handleClick = () => {
+  //   if (window.innerWidth >= 1280) {
+  //     return;
+  //   } else {
+  //     setIsClicked(!isClicked);
+  //   }
+  // };
   return (
     <>
-      {/* <Project onClick={() => !window.innerWidth? setIsClicked(!isClicked) : null} isClicked={isClicked}> */}
       <Layout>
-        <Project isClicked={isClicked}>
+        <Project>
           <div>
             <ul>
               <h1>{e.name}</h1>
@@ -125,7 +128,8 @@ function Widget({ e }) {
             <img src={e.img} alt="project" onClick={handleClick} />
           </div>
         </Project>
-        <Desc isClicked={window.innerWidth >= 1280 ? true : isClicked}>
+        {/* <Desc isClicked={window.innerWidth >= 1280 ? true : isClicked}> */}
+        <Desc isClicked={isClicked}>
           <a href={e.link}>
             <Btn>Link to GH Repo</Btn>
           </a>

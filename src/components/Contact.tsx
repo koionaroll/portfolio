@@ -7,6 +7,7 @@ import { ReactComponent as Linkedin } from "../../public/assets/icons/linkedin.s
 import { ReactComponent as Gh } from "../../public/assets/icons/gh.svg";
 import { ReactComponent as Whatsapp } from "../../public/assets/icons/whatsapp.svg";
 
+
 const Section = styled.div`
   height: 100vh;
   background-color: ${stylevar.style.backgroundTwo};
@@ -135,7 +136,7 @@ const Socials = styled.div`
 `;
 
 function Contact() {
-  const ref = useRef();
+  const ref = useRef<any>(null);
   const [success, setSuccess] = useState(false);
   const [empty, setEmpty] = useState(false);
   const [reload, setReload] = useState(0);
