@@ -8,7 +8,6 @@ import { ReactComponent as Gh } from "/src/assets/svg/gh.svg";
 import { ReactComponent as Cv } from "/src/assets/svg/cv.svg";
 import cv from "/src/assets/cv/KhoiTranCV2023.pdf";
 
-
 const Section = styled.div`
   height: 100vh;
   background-color: ${stylevar.style.backgroundTwo};
@@ -96,7 +95,7 @@ const Socials = styled.div`
   }
   @media (min-width: ${stylevar.style.desktopWidth}) {
     align-items: start;
-    margin-top: 15rem;
+    margin-top: 14rem;
   }
   div {
     display: flex;
@@ -112,20 +111,21 @@ const Socials = styled.div`
       grid-gap: 3rem;
       height: fit-content;
       align-items: center;
-      justify-content: center;    
+      justify-content: center;
     }
   }
   svg {
     width: 3.5rem;
     fill: ${stylevar.style.primaryOne};
-    height:5rem;
+    height: 5rem;
     cursor: pointer;
     @media (min-width: ${stylevar.style.tabletWidth}) {
       width: 5rem;
     }
 
     @media (min-width: ${stylevar.style.desktopWidth}) {
-      width:7rem;
+      width: 10rem;
+      height: 7rem;
     }
     transition-duration: 100ms;
     &:hover {
@@ -143,7 +143,7 @@ function Contact() {
   const [empty, setEmpty] = useState(false);
   const [reload, setReload] = useState(0);
 
-  console.log(cv)
+  console.log(cv);
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
