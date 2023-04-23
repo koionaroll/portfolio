@@ -3,12 +3,12 @@ import { Canvas, useLoader, useFrame } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
 import { TextureLoader } from "three/src/loaders/TextureLoader";
 import styled from "styled-components";
-import face1 from "../../public/assets/icons/1.jpg";
-import face2 from "../../public/assets/icons/2.png";
-import face3 from "../../public/assets/icons/3.png";
-import face4 from "../../public/assets/icons/4.png";
-import face5 from "../../public/assets/icons/5.png";
-import face6 from "../../public/assets/icons/6.png";
+import face1 from "/assets/icons/1.jpg";
+import face2 from "/assets/icons/2.png";
+import face3 from "/assets/icons/3.png";
+import face4 from "/assets/icons/4.png";
+import face5 from "/assets/icons/5.png";
+import face6 from "/assets/icons/6.png";
 import * as stylevar from "../styles/variables";
 import { BoxGeometry } from "three";
 

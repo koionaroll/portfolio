@@ -2,10 +2,11 @@ import React, { FormEvent, useRef, useState } from "react";
 import styled from "styled-components";
 import * as stylevar from "../styles/variables";
 import emailjs from "@emailjs/browser";
-import { ReactComponent as Facebook } from "../../public/assets/icons/faceboook.svg";
-import { ReactComponent as Linkedin } from "../../public/assets/icons/linkedin.svg";
-import { ReactComponent as Gh } from "../../public/assets/icons/gh.svg";
-import { ReactComponent as Whatsapp } from "../../public/assets/icons/whatsapp.svg";
+import { ReactComponent as Facebook } from "/src/assets/svg/faceboook.svg";
+import { ReactComponent as Linkedin } from "/src/assets/svg/linkedin.svg";
+import { ReactComponent as Gh } from "/src/assets/svg/gh.svg";
+import { ReactComponent as Cv } from "/src/assets/svg/cv.svg";
+import cv from "/src/assets/cv/KhoiTranCV2023.pdf";
 
 
 const Section = styled.div`
@@ -108,15 +109,16 @@ const Socials = styled.div`
         "1 2"
         "3 4";
       width: 100%;
-      grid-gap: 3.5rem;
+      grid-gap: 3rem;
       height: fit-content;
       align-items: center;
-      justify-content: center;
+      justify-content: center;    
     }
   }
   svg {
     width: 3.5rem;
     fill: ${stylevar.style.primaryOne};
+    height:5rem;
     cursor: pointer;
     @media (min-width: ${stylevar.style.tabletWidth}) {
       width: 5rem;
@@ -140,6 +142,8 @@ function Contact() {
   const [success, setSuccess] = useState(false);
   const [empty, setEmpty] = useState(false);
   const [reload, setReload] = useState(0);
+
+  console.log(cv)
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
@@ -215,8 +219,8 @@ function Contact() {
           <a href="https://www.facebook.com/Koionaroll">
             <Facebook />
           </a>
-          <a href="tel:778-929-2543">
-            <Whatsapp />
+          <a href={cv} target="_blank">
+            <Cv />
           </a>
         </div>
       </Socials>
