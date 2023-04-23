@@ -127,7 +127,6 @@ function About() {
             <Box/>
           </Suspense>
         </Canvas>
-
       </Cube>
     </Section>
   );

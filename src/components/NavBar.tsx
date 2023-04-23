@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import * as stylevar from "../styles/variables";
+import cv from "/src/assets/cv/KhoiTranCV2023.pdf";
 
 const Section = styled.div`
   position: fixed;
@@ -20,10 +21,13 @@ const Section = styled.div`
   }
   overflow-y: auto;
   div{
-    cursor: pointer;
     &:hover{
+      cursor: pointer;
       
     }
+  }
+  a{
+     color: #f5f5f5;
   }
   `;
 
@@ -41,6 +45,7 @@ function NavBar() {
       <div onClick={()=>doClick("section-1")}>ABOUT</div>
       <div onClick={()=>doClick("section-2")}>PROJECTS</div>
       <div onClick={()=>doClick("section-3")}>CONTACT</div>
+      <a href={cv} target="_blank" >CV</a>
     </Section>
   );
 }

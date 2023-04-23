@@ -192,7 +192,7 @@ function Contact() {
         <h1>Get in Touch!</h1>
         <input type="text" name="name" placeholder="Name" />
         <input type="email" name="email" placeholder="Email" />
-        <textarea name="message" placeholder="Write me anything!" rows={10} />
+        <textarea name="message" placeholder="Write me anything! // Écrivez-moi en français aussi!" rows={10} />
         <button type="submit" value="Send">
           Send
         </button>
