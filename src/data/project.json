@@ -6,7 +6,7 @@
     "img": "./assets/images/capstone.png",
     "link": "https://github.com/koionaroll/capstone-API",
     "techStack": ["ReactJs, ", "ExpressJs, ", "ScryFallAPI"],
-    "description": "For my capstone project when I attended the BrainStation bootcamp, I decided to build an archival website to keep track of a user's decks from the trading card game, Magic the Gathering. Magic Sim is a full stack react app where the user can search for card information that gets fetched from the ScryFallAPI and add them to their decklists. Users can also save and edit their created decks."
+    "description": "Magic Sim is an archival website that keeps track of a user's Magic the Gathering card decks. I’m a big fan of the game, so for my capstone project at the BrainStation coding bootcamp, I built this website as a full stack react app. Users can search for card information, which is retrieved from the ScryFallAPI, and add them to their deck lists, which can be saved and edited."
   },
   {
     "name": "InStock",
