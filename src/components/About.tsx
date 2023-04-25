@@ -10,7 +10,6 @@ import face4 from "/assets/icons/4.png";
 import face5 from "/assets/icons/5.png";
 import face6 from "/assets/icons/6.png";
 import * as stylevar from "../styles/variables";
-import { BoxGeometry } from "three";
 
 const Section = styled.div`
   height: 100vh;
